@@ -13,8 +13,9 @@
 #include "usart.h"
 #include "led.h"
 #include "RTC_Time.h" 
+#include "pwm.h"
 #include <stdio.h>
-
+#include "systick.h"
 //=============================================================================
 //函数名称:Delay
 //功能概要:延时函数
@@ -42,11 +43,16 @@ int main(void)
     printf("*      STM32最小系统板RTC测试后循环点亮PC13端的LED!          ^_^  *\r\n");
     printf("*                                                               *\r\n");
     printf("*****************************************************************\r\n");
-    RTC_Init();
-	  
+ //   RTC_Init();
+		TIM3_PWM_Init(200-1,7200-1);
+		delay_init();
+		
     while (1)
     {
-
+			open_door();
+			delay_ms(500);
+			close_door();
+			delay_ms(500);
     }
 }
 

@@ -578,6 +578,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\BSP\RTC_Time.c</FilePath>
             </File>
+            <File>
+              <FileName>pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\pwm.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
