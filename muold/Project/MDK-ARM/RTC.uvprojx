@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\Libraries\CMSIS\CM3\CoreSupport;..\..\\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x;..\..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\..\Libraries\STM32F10x_StdPeriph_Driver\src;..\..\Project;..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\arm;..\..\BSP;..\..\FONTS</IncludePath>
+              <IncludePath>..\..\Libraries\CMSIS\CM3\CoreSupport;..\..\\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x;..\..\Libraries\STM32F10x_StdPeriph_Driver\inc;..\..\Libraries\STM32F10x_StdPeriph_Driver\src;..\..\Project;..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\arm;..\..\BSP\inc;..\..\FONTS</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -564,24 +564,39 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\BSP\usart.c</FilePath>
-            </File>
-            <File>
               <FileName>led.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\BSP\led.c</FilePath>
-            </File>
-            <File>
-              <FileName>RTC_Time.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\BSP\RTC_Time.c</FilePath>
+              <FilePath>..\..\BSP\src\led.c</FilePath>
             </File>
             <File>
               <FileName>pwm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\BSP\pwm.c</FilePath>
+              <FilePath>..\..\BSP\src\pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>RTC_Time.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\src\RTC_Time.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\src\spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f10x_systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\src\stm32f10x_systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>systick.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\src\systick.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\src\usart.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -26,12 +26,15 @@
 ".\obj\stm32f10x_usart.o"
 ".\obj\stm32f10x_wwdg.o"
 ".\obj\system_stm32f10x.o"
-".\obj\usart.o"
 ".\obj\led.o"
-".\obj\rtc_time.o"
 ".\obj\pwm.o"
-".\obj\systick.o"
+".\obj\rtc_time.o"
+".\obj\spi.o"
 ".\obj\stm32f10x_systick.o"
+".\obj\systick.o"
+".\obj\usart.o"
+".\obj\rc522.o"
+".\obj\rfid.o"
 --library_type=microlib --strict --scatter ".\obj\YD_DEMO.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

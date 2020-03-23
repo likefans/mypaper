@@ -1,5 +1,5 @@
-.\obj\systick.o: ..\..\BSP\systick.c
-.\obj\systick.o: ..\..\BSP\systick.h
+.\obj\systick.o: ..\..\BSP\src\systick.c
+.\obj\systick.o: ..\..\BSP\inc\systick.h
 .\obj\systick.o: ..\..\\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
 .\obj\systick.o: ..\..\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
 .\obj\systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -28,4 +28,4 @@
 .\obj\systick.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 .\obj\systick.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\obj\systick.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
-.\obj\systick.o: ..\..\BSP\stm32f10x_systick.h
+.\obj\systick.o: ..\..\BSP\inc\stm32f10x_systick.h

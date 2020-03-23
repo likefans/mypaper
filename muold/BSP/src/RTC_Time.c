@@ -269,7 +269,7 @@ static void RTC_Configuration(void)
 * Return         : uint8_t
 * Attention		 : None
 *******************************************************************************/
-static uint16_t USART_Scanf(uint32_t min_value,uint32_t max_value,uint8_t lenght)
+uint16_t USART_Scanf(uint32_t min_value,uint32_t max_value,uint8_t lenght)
 {
   uint16_t index = 0;
   uint32_t tmp[4] = {0, 0, 0, 0};

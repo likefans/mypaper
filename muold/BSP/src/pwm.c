@@ -1,46 +1,53 @@
 #include "pwm.h"
 
-void TIM2_PWM_Init(void)
+void TIM2_Init(u16 arr,u16 psc)
 {
-	GPIO_InitTypeDef GPIO_InitStruct;
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;
-	TIM_OCInitTypeDef TIM_OCInitStruct;
-	
+	NVIC_InitTypeDef NVIC_InitStruct;
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,ENABLE);
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA | RCC_APB2Periph_AFIO,ENABLE);
 	
-	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF_PP;
-	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_1;
-	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
-	GPIO_Init(GPIOA,&GPIO_InitStruct);
-	
-	GPIO_PinRemapConfig(GPIO_PartialRemap2_TIM2, ENABLE);
 
-	TIM_TimeBaseInitStruct.TIM_Period = 200-1;
-	TIM_TimeBaseInitStruct.TIM_Prescaler = 7200-1;
+	TIM_TimeBaseInitStruct.TIM_Period = arr -1;
+	TIM_TimeBaseInitStruct.TIM_Prescaler = psc -1;
 	TIM_TimeBaseInitStruct.TIM_ClockDivision = TIM_CKD_DIV1;
 	TIM_TimeBaseInitStruct.TIM_CounterMode = TIM_CounterMode_Up;
 	
 	TIM_TimeBaseInit(TIM2,&TIM_TimeBaseInitStruct);
 	
-	TIM_OCInitStruct.TIM_OCMode = TIM_OCMode_PWM1;
-	TIM_OCInitStruct.TIM_OutputState = TIM_OutputState_Enable;
-	TIM_OCInitStruct.TIM_OCPolarity = TIM_OCPolarity_High;
-	TIM_OC2Init(TIM2,&TIM_OCInitStruct);
+	TIM_ITConfig(TIM2,TIM_IT_Update,ENABLE);
 	
+	NVIC_InitStruct.NVIC_IRQChannel = TIM2_IRQn;
+	NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority =  2;
+	NVIC_InitStruct.NVIC_IRQChannelSubPriority = 2;
 	
-	TIM_OC2PreloadConfig(TIM2, TIM_OCPreload_Enable);
+	NVIC_Init(&NVIC_InitStruct);
 	
-//	TIM_ARRPreloadConfig(TIM2,ENABLE);
 	
 	TIM_Cmd(TIM2,ENABLE);
 
 
 }
 
+void TIM2_IRQHandler(void)
+{
+	static u8 count;
+	if(TIM_GetITStatus(TIM2,TIM_IT_Update) != RESET)
+	{ 
+		count++;
+		if(count>=3)
+		{ 
+			count = 0;
+			TIM_ClearITPendingBit(TIM2,TIM_IT_Update);
+			close_door();
+			TIM_Cmd(TIM2,DISABLE);
+		}
+		else
+			TIM_ClearITPendingBit(TIM2,TIM_IT_Update);
+	}
+}
 
-
-void TIM3_PWM_Init(u16 arr,u16 psc)
+void TIM3_PWM_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStructure;
 	TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;   //初始化定时器

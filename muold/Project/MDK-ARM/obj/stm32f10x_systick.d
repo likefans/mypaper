@@ -1,5 +1,5 @@
-.\obj\stm32f10x_systick.o: ..\..\BSP\stm32f10x_systick.c
-.\obj\stm32f10x_systick.o: ..\..\BSP\stm32f10x_systick.h
+.\obj\stm32f10x_systick.o: ..\..\BSP\src\stm32f10x_systick.c
+.\obj\stm32f10x_systick.o: ..\..\BSP\inc\stm32f10x_systick.h
 .\obj\stm32f10x_systick.o: ..\..\\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
 .\obj\stm32f10x_systick.o: ..\..\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
 .\obj\stm32f10x_systick.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

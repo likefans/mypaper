@@ -1,5 +1,5 @@
-.\obj\rtc_time.o: ..\..\BSP\RTC_Time.c
-.\obj\rtc_time.o: ..\..\BSP\RTC_Time.h
+.\obj\rtc_time.o: ..\..\BSP\src\RTC_Time.c
+.\obj\rtc_time.o: ..\..\BSP\inc\RTC_Time.h
 .\obj\rtc_time.o: ..\..\\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
 .\obj\rtc_time.o: ..\..\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
 .\obj\rtc_time.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

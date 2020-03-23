@@ -28,8 +28,8 @@
 .\obj\stm32f10x_it.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 .\obj\stm32f10x_it.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\obj\stm32f10x_it.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
-.\obj\stm32f10x_it.o: ..\..\BSP\RTC_Time.h
+.\obj\stm32f10x_it.o: ..\..\BSP\inc\RTC_Time.h
 .\obj\stm32f10x_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\obj\stm32f10x_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\obj\stm32f10x_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-.\obj\stm32f10x_it.o: ..\..\BSP\led.h
+.\obj\stm32f10x_it.o: ..\..\BSP\inc\led.h
