@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\obj\YD_DEMO.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\obj\YD_DEMO.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Tue Mar 24 01:54:34 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Tue Mar 24 02:14:30 2020
 <BR><P>
 <H3>Maximum Stack Usage =        160 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -346,13 +346,13 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_Config
 <LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_PWM_Init
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ini
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ini
 </UL>
 
 <P><STRONG><a name="[d4]"></a>GPIO_StructInit</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[a6]"></a>GPIO_ReadInputDataBit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
+<P><STRONG><a name="[b2]"></a>GPIO_ReadInputDataBit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
 </UL>
 
 <P><STRONG><a name="[d5]"></a>GPIO_ReadInputData</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
@@ -364,17 +364,17 @@ Global Symbols
 <P><STRONG><a name="[43]"></a>GPIO_SetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_IRQHandler
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeSystem
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdReset
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdReset
 </UL>
 
 <P><STRONG><a name="[44]"></a>GPIO_ResetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_IRQHandler
 <LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeSystem
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdReset
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdReset
 </UL>
 
 <P><STRONG><a name="[d8]"></a>GPIO_WriteBit</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
@@ -483,7 +483,7 @@ Global Symbols
 <P><STRONG><a name="[73]"></a>RCC_APB2PeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[3c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_Config
 <LI><a href="#[3e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_PWM_Init
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ini
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ini
 </UL>
 
 <P><STRONG><a name="[6a]"></a>RCC_APB1PeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
@@ -1133,216 +1133,7 @@ Global Symbols
 <LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
 </UL>
 
-<P><STRONG><a name="[a4]"></a>WriteRawRC</STRONG> (Thumb, 162 bytes, Stack size 24 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = WriteRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M500PcdConfigISOType
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdReset
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAnticoll
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRequest
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
-</UL>
-
-<P><STRONG><a name="[a5]"></a>ReadRawRC</STRONG> (Thumb, 152 bytes, Stack size 24 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
-<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAntennaOn
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdReset
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAuthState
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
-</UL>
-
-<P><STRONG><a name="[a7]"></a>SetBitMask</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SetBitMask &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAntennaOn
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAnticoll
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRequest
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
-</UL>
-
-<P><STRONG><a name="[a8]"></a>ClearBitMask</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = ClearBitMask &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAntennaOff
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M500PcdConfigISOType
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdSelect
-<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAnticoll
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRequest
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
-</UL>
-
-<P><STRONG><a name="[a9]"></a>PcdComMF522</STRONG> (Thumb, 306 bytes, Stack size 48 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdHalt
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdWrite
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRead
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAuthState
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdSelect
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAnticoll
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRequest
-</UL>
-
-<P><STRONG><a name="[aa]"></a>PcdRequest</STRONG> (Thumb, 84 bytes, Stack size 48 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = PcdRequest &rArr; PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
-</UL>
-<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findcard
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WaitCardOff
-</UL>
-
-<P><STRONG><a name="[ab]"></a>PcdAnticoll</STRONG> (Thumb, 112 bytes, Stack size 48 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = PcdAnticoll &rArr; PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
-</UL>
-<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findcard
-</UL>
-
-<P><STRONG><a name="[ac]"></a>CalulateCRC</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = CalulateCRC &rArr; ClearBitMask &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdHalt
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdWrite
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRead
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdSelect
-</UL>
-
-<P><STRONG><a name="[ad]"></a>PcdSelect</STRONG> (Thumb, 118 bytes, Stack size 48 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = PcdSelect &rArr; PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
-</UL>
-<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findcard
-</UL>
-
-<P><STRONG><a name="[ae]"></a>PcdAuthState</STRONG> (Thumb, 110 bytes, Stack size 56 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = PcdAuthState &rArr; PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
-</UL>
-<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findcard
-</UL>
-
-<P><STRONG><a name="[af]"></a>PcdRead</STRONG> (Thumb, 84 bytes, Stack size 48 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = PcdRead &rArr; PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
-</UL>
-<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findcard
-</UL>
-
-<P><STRONG><a name="[b0]"></a>PcdWrite</STRONG> (Thumb, 146 bytes, Stack size 48 bytes, rc522.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
-</UL>
-
-<P><STRONG><a name="[b1]"></a>PcdHalt</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, rc522.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
-<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
-</UL>
-
-<P><STRONG><a name="[b3]"></a>delay_10ms</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, rc522.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeSystem
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WaitCardOff
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M500PcdConfigISOType
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdReset
-</UL>
-
-<P><STRONG><a name="[b2]"></a>PcdReset</STRONG> (Thumb, 176 bytes, Stack size 8 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = PcdReset &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
-<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_10ms
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
-</UL>
-<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeSystem
-</UL>
-
-<P><STRONG><a name="[b4]"></a>PcdAntennaOn</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = PcdAntennaOn &rArr; SetBitMask &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
-<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
-</UL>
-<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeSystem
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M500PcdConfigISOType
-</UL>
-
-<P><STRONG><a name="[b5]"></a>M500PcdConfigISOType</STRONG> (Thumb, 92 bytes, Stack size 8 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = M500PcdConfigISOType &rArr; PcdAntennaOn &rArr; SetBitMask &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAntennaOn
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_10ms
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
-<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
-</UL>
-<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeSystem
-</UL>
-
-<P><STRONG><a name="[b6]"></a>PcdAntennaOff</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = PcdAntennaOff &rArr; ClearBitMask &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
-</UL>
-<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeSystem
-</UL>
-
-<P><STRONG><a name="[b7]"></a>WaitCardOff</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, rc522.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = WaitCardOff &rArr; PcdRequest &rArr; PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
-</UL>
-<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_10ms
-<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRequest
-</UL>
-<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findcard
-</UL>
-
-<P><STRONG><a name="[b8]"></a>GPIO_ini</STRONG> (Thumb, 210 bytes, Stack size 8 bytes, rfid.o(.text))
+<P><STRONG><a name="[a4]"></a>GPIO_ini</STRONG> (Thumb, 210 bytes, Stack size 8 bytes, rfid.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = GPIO_ini &rArr; GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphClockCmd
@@ -1356,12 +1147,12 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
 <LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ini
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAntennaOff
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M500PcdConfigISOType
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAntennaOn
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdReset
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_10ms
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_10ms
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdReset
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAntennaOn
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAntennaOff
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M500PcdConfigISOType
+<LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ini
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1370,16 +1161,225 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = findcard &rArr; WaitCardOff &rArr; PcdRequest &rArr; PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
 </UL>
 <BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WaitCardOff
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRead
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAuthState
-<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdSelect
-<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAnticoll
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WaitCardOff
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdSelect
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRequest
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRead
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAuthState
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAnticoll
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;open_door
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Cmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[b0]"></a>WriteRawRC</STRONG> (Thumb, 162 bytes, Stack size 24 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = WriteRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdReset
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRequest
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAnticoll
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M500PcdConfigISOType
+</UL>
+
+<P><STRONG><a name="[b1]"></a>ReadRawRC</STRONG> (Thumb, 152 bytes, Stack size 24 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
+<LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdReset
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAuthState
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAntennaOn
+</UL>
+
+<P><STRONG><a name="[b3]"></a>SetBitMask</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SetBitMask &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRequest
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAnticoll
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAntennaOn
+</UL>
+
+<P><STRONG><a name="[b4]"></a>ClearBitMask</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = ClearBitMask &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdSelect
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRequest
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAnticoll
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAntennaOff
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M500PcdConfigISOType
+</UL>
+
+<P><STRONG><a name="[b5]"></a>PcdComMF522</STRONG> (Thumb, 306 bytes, Stack size 48 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdHalt
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdWrite
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdSelect
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRequest
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRead
+<LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAuthState
+<LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAnticoll
+</UL>
+
+<P><STRONG><a name="[aa]"></a>PcdRequest</STRONG> (Thumb, 84 bytes, Stack size 48 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = PcdRequest &rArr; PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
+</UL>
+<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findcard
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WaitCardOff
+</UL>
+
+<P><STRONG><a name="[ab]"></a>PcdAnticoll</STRONG> (Thumb, 112 bytes, Stack size 48 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = PcdAnticoll &rArr; PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
+</UL>
+<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findcard
+</UL>
+
+<P><STRONG><a name="[b6]"></a>CalulateCRC</STRONG> (Thumb, 108 bytes, Stack size 24 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = CalulateCRC &rArr; ClearBitMask &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdHalt
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdWrite
+<LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdSelect
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRead
+</UL>
+
+<P><STRONG><a name="[ac]"></a>PcdSelect</STRONG> (Thumb, 118 bytes, Stack size 48 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = PcdSelect &rArr; PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
+</UL>
+<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findcard
+</UL>
+
+<P><STRONG><a name="[ad]"></a>PcdAuthState</STRONG> (Thumb, 110 bytes, Stack size 56 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = PcdAuthState &rArr; PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
+</UL>
+<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findcard
+</UL>
+
+<P><STRONG><a name="[ae]"></a>PcdRead</STRONG> (Thumb, 84 bytes, Stack size 48 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = PcdRead &rArr; PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
+</UL>
+<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findcard
+</UL>
+
+<P><STRONG><a name="[b7]"></a>PcdWrite</STRONG> (Thumb, 146 bytes, Stack size 48 bytes, rc522.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
+</UL>
+
+<P><STRONG><a name="[b8]"></a>PcdHalt</STRONG> (Thumb, 50 bytes, Stack size 32 bytes, rc522.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CalulateCRC
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdComMF522
+</UL>
+
+<P><STRONG><a name="[a5]"></a>delay_10ms</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, rc522.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeSystem
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WaitCardOff
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdReset
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M500PcdConfigISOType
+</UL>
+
+<P><STRONG><a name="[a6]"></a>PcdReset</STRONG> (Thumb, 176 bytes, Stack size 8 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = PcdReset &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_SetBits
+<LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ResetBits
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_10ms
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeSystem
+</UL>
+
+<P><STRONG><a name="[a8]"></a>PcdAntennaOn</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = PcdAntennaOn &rArr; SetBitMask &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetBitMask
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadRawRC
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeSystem
+<LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;M500PcdConfigISOType
+</UL>
+
+<P><STRONG><a name="[a9]"></a>M500PcdConfigISOType</STRONG> (Thumb, 92 bytes, Stack size 8 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = M500PcdConfigISOType &rArr; PcdAntennaOn &rArr; SetBitMask &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WriteRawRC
+<LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_10ms
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdAntennaOn
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeSystem
+</UL>
+
+<P><STRONG><a name="[a7]"></a>PcdAntennaOff</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = PcdAntennaOff &rArr; ClearBitMask &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ClearBitMask
+</UL>
+<BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitializeSystem
+</UL>
+
+<P><STRONG><a name="[af]"></a>WaitCardOff</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, rc522.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = WaitCardOff &rArr; PcdRequest &rArr; PcdComMF522 &rArr; ClearBitMask &rArr; ReadRawRC
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_10ms
+<LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PcdRequest
+</UL>
+<BR>[Called By]<UL><LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findcard
 </UL>
 
 <P><STRONG><a name="[7d]"></a>mktime</STRONG> (Thumb, 150 bytes, Stack size 16 bytes, mktime.o(.text), UNUSED)

@@ -61,7 +61,6 @@ Section Cross References
     usart.o(.text) refers to stm32f10x_rcc.o(.text) for RCC_APB2PeriphClockCmd
     usart.o(.text) refers to stm32f10x_gpio.o(.text) for GPIO_Init
     usart.o(.text) refers to stm32f10x_usart.o(.text) for USART_Init
-    rc522.o(.text) refers to stm32f10x_gpio.o(.text) for GPIO_ResetBits
     rfid.o(.text) refers to stm32f10x_rcc.o(.text) for RCC_APB2PeriphClockCmd
     rfid.o(.text) refers to stm32f10x_gpio.o(.text) for GPIO_Init
     rfid.o(.text) refers to rc522.o(.text) for delay_10ms
@@ -70,6 +69,7 @@ Section Cross References
     rfid.o(.text) refers to stm32f10x_tim.o(.text) for TIM_Cmd
     rfid.o(.text) refers to rfid.o(.data) for TagType
     rfid.o(.text) refers to rfid.o(.bss) for bufr
+    rc522.o(.text) refers to stm32f10x_gpio.o(.text) for GPIO_ResetBits
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
     entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
@@ -382,53 +382,53 @@ Image Symbol Table
 
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../clib/microlib/time/localtime.c        0x00000000   Number         0  localtime_i.o ABSOLUTE
-    ../clib/microlib/time/localtime.c        0x00000000   Number         0  localtime.o ABSOLUTE
     ../clib/microlib/time/localtime.c        0x00000000   Number         0  localtime_w.o ABSOLUTE
+    ../clib/microlib/time/localtime.c        0x00000000   Number         0  localtime.o ABSOLUTE
     ../clib/microlib/time/mktime.c           0x00000000   Number         0  mktime.o ABSOLUTE
     ../fplib/microlib/fpadd.c                0x00000000   Number         0  dadd.o ABSOLUTE
     ../fplib/microlib/fpdiv.c                0x00000000   Number         0  ddiv.o ABSOLUTE
     ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    ..\..\BSP\src\RC522.C                    0x00000000   Number         0  rc522.o ABSOLUTE
     ..\..\BSP\src\RFID.c                     0x00000000   Number         0  rfid.o ABSOLUTE
     ..\..\BSP\src\RTC_Time.c                 0x00000000   Number         0  rtc_time.o ABSOLUTE
     ..\..\BSP\src\led.c                      0x00000000   Number         0  led.o ABSOLUTE
     ..\..\BSP\src\pwm.c                      0x00000000   Number         0  pwm.o ABSOLUTE
-    ..\..\BSP\src\rc522.c                    0x00000000   Number         0  rc522.o ABSOLUTE
     ..\..\BSP\src\spi.c                      0x00000000   Number         0  spi.o ABSOLUTE
     ..\..\BSP\src\stm32f10x_systick.c        0x00000000   Number         0  stm32f10x_systick.o ABSOLUTE
     ..\..\BSP\src\systick.c                  0x00000000   Number         0  systick.o ABSOLUTE
@@ -500,8 +500,8 @@ Image Symbol Table
     .text                                    0x080025d4   Section        0  stm32f10x_systick.o(.text)
     .text                                    0x08002670   Section        0  systick.o(.text)
     .text                                    0x08002740   Section        0  usart.o(.text)
-    .text                                    0x08002844   Section        0  rc522.o(.text)
-    .text                                    0x08002f9c   Section        0  rfid.o(.text)
+    .text                                    0x08002844   Section        0  rfid.o(.text)
+    .text                                    0x08002a24   Section        0  rc522.o(.text)
     .text                                    0x0800317c   Section        0  mktime.o(.text)
     .text                                    0x08003224   Section        0  memcpya.o(.text)
     .text                                    0x08003248   Section        0  memseta.o(.text)
@@ -896,28 +896,28 @@ Image Symbol Table
     fputc                                    0x080027d9   Thumb Code    32  usart.o(.text)
     USART1_Putc                              0x080027f9   Thumb Code    28  usart.o(.text)
     USART1_Puts                              0x08002815   Thumb Code    38  usart.o(.text)
-    WriteRawRC                               0x08002845   Thumb Code   162  rc522.o(.text)
-    ReadRawRC                                0x080028e7   Thumb Code   152  rc522.o(.text)
-    SetBitMask                               0x0800297f   Thumb Code    28  rc522.o(.text)
-    ClearBitMask                             0x0800299b   Thumb Code    28  rc522.o(.text)
-    PcdComMF522                              0x080029b7   Thumb Code   306  rc522.o(.text)
-    PcdRequest                               0x08002ae9   Thumb Code    84  rc522.o(.text)
-    PcdAnticoll                              0x08002b3d   Thumb Code   112  rc522.o(.text)
-    CalulateCRC                              0x08002bad   Thumb Code   108  rc522.o(.text)
-    PcdSelect                                0x08002c19   Thumb Code   118  rc522.o(.text)
-    PcdAuthState                             0x08002c8f   Thumb Code   110  rc522.o(.text)
-    PcdRead                                  0x08002cfd   Thumb Code    84  rc522.o(.text)
-    PcdWrite                                 0x08002d51   Thumb Code   146  rc522.o(.text)
-    PcdHalt                                  0x08002de3   Thumb Code    50  rc522.o(.text)
-    delay_10ms                               0x08002e15   Thumb Code    26  rc522.o(.text)
-    PcdReset                                 0x08002e2f   Thumb Code   176  rc522.o(.text)
-    PcdAntennaOn                             0x08002edf   Thumb Code    26  rc522.o(.text)
-    M500PcdConfigISOType                     0x08002ef9   Thumb Code    92  rc522.o(.text)
-    PcdAntennaOff                            0x08002f55   Thumb Code    12  rc522.o(.text)
-    WaitCardOff                              0x08002f61   Thumb Code    50  rc522.o(.text)
-    GPIO_ini                                 0x08002f9d   Thumb Code   210  rfid.o(.text)
-    InitializeSystem                         0x0800306f   Thumb Code    90  rfid.o(.text)
-    findcard                                 0x080030c9   Thumb Code   138  rfid.o(.text)
+    GPIO_ini                                 0x08002845   Thumb Code   210  rfid.o(.text)
+    InitializeSystem                         0x08002917   Thumb Code    90  rfid.o(.text)
+    findcard                                 0x08002971   Thumb Code   138  rfid.o(.text)
+    WriteRawRC                               0x08002a25   Thumb Code   162  rc522.o(.text)
+    ReadRawRC                                0x08002ac7   Thumb Code   152  rc522.o(.text)
+    SetBitMask                               0x08002b5f   Thumb Code    28  rc522.o(.text)
+    ClearBitMask                             0x08002b7b   Thumb Code    28  rc522.o(.text)
+    PcdComMF522                              0x08002b97   Thumb Code   306  rc522.o(.text)
+    PcdRequest                               0x08002cc9   Thumb Code    84  rc522.o(.text)
+    PcdAnticoll                              0x08002d1d   Thumb Code   112  rc522.o(.text)
+    CalulateCRC                              0x08002d8d   Thumb Code   108  rc522.o(.text)
+    PcdSelect                                0x08002df9   Thumb Code   118  rc522.o(.text)
+    PcdAuthState                             0x08002e6f   Thumb Code   110  rc522.o(.text)
+    PcdRead                                  0x08002edd   Thumb Code    84  rc522.o(.text)
+    PcdWrite                                 0x08002f31   Thumb Code   146  rc522.o(.text)
+    PcdHalt                                  0x08002fc3   Thumb Code    50  rc522.o(.text)
+    delay_10ms                               0x08002ff5   Thumb Code    26  rc522.o(.text)
+    PcdReset                                 0x0800300f   Thumb Code   176  rc522.o(.text)
+    PcdAntennaOn                             0x080030bf   Thumb Code    26  rc522.o(.text)
+    M500PcdConfigISOType                     0x080030d9   Thumb Code    92  rc522.o(.text)
+    PcdAntennaOff                            0x08003135   Thumb Code    12  rc522.o(.text)
+    WaitCardOff                              0x08003141   Thumb Code    50  rc522.o(.text)
     mktime                                   0x0800317d   Thumb Code   150  mktime.o(.text)
     __aeabi_memcpy                           0x08003225   Thumb Code    36  memcpya.o(.text)
     __aeabi_memcpy4                          0x08003225   Thumb Code     0  memcpya.o(.text)
@@ -1005,8 +1005,8 @@ Memory Map of the image
     0x0800266e   0x00000002   PAD
     0x08002670   0x000000d0   Code   RO          614    .text               systick.o
     0x08002740   0x00000104   Code   RO          628    .text               usart.o
-    0x08002844   0x00000758   Code   RO          640    .text               rc522.o
-    0x08002f9c   0x000001e0   Code   RO          655    .text               rfid.o
+    0x08002844   0x000001e0   Code   RO          640    .text               rfid.o
+    0x08002a24   0x00000758   Code   RO          662    .text               rc522.o
     0x0800317c   0x000000a8   Code   RO          681    .text               mc_w.l(mktime.o)
     0x08003224   0x00000024   Code   RO          684    .text               mc_w.l(memcpya.o)
     0x08003248   0x00000024   Code   RO          686    .text               mc_w.l(memseta.o)
@@ -1040,10 +1040,10 @@ Memory Map of the image
     0x20000034   0x00000001   Data   RW          559    .data               pwm.o
     0x20000035   0x00000001   PAD
     0x20000036   0x00000005   Data   RW          615    .data               systick.o
-    0x2000003b   0x0000002b   Data   RW          657    .data               rfid.o
+    0x2000003b   0x0000002b   Data   RW          642    .data               rfid.o
     0x20000066   0x00000002   PAD
     0x20000068   0x00000004   Data   RW          965    .data               mc_w.l(stdout.o)
-    0x2000006c   0x0000005e   Zero   RW          656    .bss                rfid.o
+    0x2000006c   0x0000005e   Zero   RW          641    .bss                rfid.o
     0x200000ca   0x00000002   PAD
     0x200000cc   0x0000002c   Zero   RW          971    .bss                mc_w.l(localtime_w.o)
     0x200000f8   0x00000400   Zero   RW            1    STACK               startup_stm32f10x_md.o

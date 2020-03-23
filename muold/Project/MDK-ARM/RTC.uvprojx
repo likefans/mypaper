@@ -598,6 +598,16 @@
               <FileType>1</FileType>
               <FilePath>..\..\BSP\src\usart.c</FilePath>
             </File>
+            <File>
+              <FileName>RFID.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\src\RFID.c</FilePath>
+            </File>
+            <File>
+              <FileName>RC522.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\src\RC522.C</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

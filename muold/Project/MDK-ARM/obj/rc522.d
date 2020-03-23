@@ -1,4 +1,4 @@
-.\obj\rc522.o: ..\..\BSP\src\rc522.c
+.\obj\rc522.o: ..\..\BSP\src\RC522.C
 .\obj\rc522.o: ..\..\Project\main.h
 .\obj\rc522.o: ..\..\\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\stm32f10x.h
 .\obj\rc522.o: ..\..\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
