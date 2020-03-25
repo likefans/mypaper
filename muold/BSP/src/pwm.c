@@ -1,5 +1,43 @@
 #include "pwm.h"
 
+extern vu16 USART2_RX_STA;
+void TIM4_IRQHandler(void)
+{
+	if(TIM_GetFlagStatus(TIM4,TIM_IT_Update) != RESET)
+	{
+		USART2_RX_STA|=1<<15;	//标记接收完成
+		printf("heh");
+		TIM_ClearITPendingBit(TIM4, TIM_IT_Update  );  //清除TIM4更新中断标志    
+	}
+	
+}
+void TIM4_Init(u16 arr,u16 prc)
+{
+	NVIC_InitTypeDef NVIC_InitStruct;
+	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;
+	
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4,ENABLE);
+	
+	TIM_TimeBaseInitStruct.TIM_Period = arr -1;
+	TIM_TimeBaseInitStruct.TIM_Prescaler = prc -1;
+	TIM_TimeBaseInitStruct.TIM_ClockDivision = TIM_CKD_DIV1;
+	TIM_TimeBaseInitStruct.TIM_CounterMode = TIM_CounterMode_Up;
+	
+	TIM_TimeBaseInit(TIM4,&TIM_TimeBaseInitStruct);
+
+	TIM_ITConfig(TIM4,TIM_IT_Update,ENABLE);
+	
+	NVIC_InitStruct.NVIC_IRQChannel = TIM4_IRQn;
+	NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority =  3;
+	NVIC_InitStruct.NVIC_IRQChannelSubPriority = 2;
+	
+	NVIC_Init(&NVIC_InitStruct);
+	
+	TIM_Cmd(TIM4,ENABLE);
+}
+
+	
 void TIM2_Init(u16 arr,u16 psc)
 {
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStruct;

@@ -29,11 +29,11 @@
 .\obj\main.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\obj\main.o: ..\..\BSP\inc\usart.h
 .\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\obj\main.o: ..\..\BSP\inc\pwm.h
 .\obj\main.o: ..\..\BSP\inc\led.h
 .\obj\main.o: ..\..\BSP\inc\RTC_Time.h
 .\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
 .\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-.\obj\main.o: ..\..\BSP\inc\pwm.h
 .\obj\main.o: ..\..\BSP\inc\systick.h
 .\obj\main.o: ..\..\BSP\inc\rc522.h
 .\obj\main.o: ..\MAIN.h

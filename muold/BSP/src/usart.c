@@ -1,24 +1,5 @@
-//=============================================================================
-//文件名称:usart.c
-//功能概要:将printf函数重定向到USART1。这样就可以用printf函数将单片机的数据
-//         打印到PC上的超级终端或串口调试助手。
-//库版本：V3.5.0
-//版权所有:源地工作室www.vcc-gnd.com
-//版本更新:2013-02-20 v1.0
-//调试方式:J-LINK-OB
-//=============================================================================
-
 //头文件
 #include "usart.h"
-
-
-//=============================================================================
-//函数名称:USART1_Config
-//功能概要:USART1 GPIO 配置,工作模式配置。115200 8-N-1
-//参数说明:无
-//函数返回:无
-//=============================================================================
-
 void USART1_Config(void)
 {	
     GPIO_InitTypeDef GPIO_InitStructure;	
@@ -94,3 +75,91 @@ void USART1_Puts(char * str)
         while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);
     }
 }
+
+
+void USART2_Config(void)
+{
+	GPIO_InitTypeDef GPIO_InitStruct;
+	USART_InitTypeDef USART_InitStruct;
+	NVIC_InitTypeDef NVIC_InitStruct;
+	
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2,ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA  ,ENABLE);
+	
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_AF_PP; 
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_2;
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+
+	GPIO_Init(GPIOA,&GPIO_InitStruct);
+	
+	GPIO_InitStruct.GPIO_Mode = GPIO_Mode_IN_FLOATING; 
+	GPIO_InitStruct.GPIO_Pin = GPIO_Pin_3;
+	GPIO_InitStruct.GPIO_Speed = GPIO_Speed_50MHz;
+
+	GPIO_Init(GPIOA,&GPIO_InitStruct);
+	
+	USART_InitStruct.USART_BaudRate = 9600;
+	USART_InitStruct.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
+	USART_InitStruct.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
+	USART_InitStruct.USART_Parity = USART_Parity_No;
+	USART_InitStruct.USART_StopBits = USART_StopBits_1;
+	USART_InitStruct.USART_WordLength = USART_WordLength_8b;
+	USART_Init(USART2, &USART_InitStruct);
+	
+	USART_ITConfig(USART2,USART_IT_RXNE,ENABLE);
+	
+	USART_Cmd(USART2,ENABLE);
+
+	NVIC_InitStruct.NVIC_IRQChannel = USART2_IRQn;
+	NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = 1;
+	NVIC_InitStruct.NVIC_IRQChannelSubPriority = 3;
+
+	NVIC_Init(&NVIC_InitStruct);
+	
+	TIM4_Init(100-1,7200-1);
+	USART2_RX_STA=0;		//清零
+	TIM_Cmd(TIM4,DISABLE);
+	
+}
+
+u8 USART2_RX_BUF[USART2_MAX_RECV_LEN]; 				//接收缓冲,最大USART2_MAX_RECV_LEN个字节.
+u8 USART2_TX_BUF[USART2_MAX_SEND_LEN]; 			  //发送缓冲,最大USART2_MAX_SEND_LEN字节
+
+//通过判断接收连续2个字符之间的时间差不大于10ms来决定是不是一次连续的数据.
+//如果2个字符接收间隔超过10ms,则认为不是1次连续数据.也就是超过10ms没有接收到
+//任何数据,则表示此次接收完毕.
+//接收到的数据状态
+//[15]:0,没有接收到数据;1,接收到了一批数据.
+//[14:0]:接收到的数据长度
+vu16 USART2_RX_STA=0; 
+
+void USART2_IRQHandler()
+{
+		u8 res;
+		if(USART_GetFlagStatus(USART2,USART_IT_RXNE) != RESET)
+		{
+				res =USART_ReceiveData(USART2);
+				if(USART2_RX_STA&(1<<15) == 0)
+				{
+					if(USART2_RX_STA<USART2_MAX_RECV_LEN)	//还可以接收数据
+					{
+						TIM_SetCounter(TIM4,0);//计数器清空          				//计数器清空
+						if(USART2_RX_STA==0) 				//使能定时器4的中断 
+						{
+							TIM_Cmd(TIM4,ENABLE);//使能定时器4
+						}
+						USART2_RX_BUF[USART2_RX_STA++]=res;	//记录接收到的值	 
+					}else 
+					{
+						USART2_RX_STA|=1<<15;				//强制标记接收完成	
+					} 		
+				}
+		}
+
+
+}
+
+
+
+

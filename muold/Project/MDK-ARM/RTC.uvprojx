@@ -608,6 +608,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\BSP\src\RC522.C</FilePath>
             </File>
+            <File>
+              <FileName>as608.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\BSP\src\as608.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

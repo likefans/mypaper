@@ -14,10 +14,9 @@
 #include "string.h"
 #include "rfid.h"
 
-//int i,j;
-
 int main(void)
 {	
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
   delay_init();  
 	USART1_Config();
   InitializeSystem( );
