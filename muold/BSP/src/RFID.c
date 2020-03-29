@@ -117,6 +117,7 @@ void findcard(void)
 								status = PcdRead((snr*4+0), bufr);  
 								 //printf(" %s %s",bufr,SelectedSnr);
 								printf("³É¹¦¶ÁÐ´\n");
+								TIM_Cmd(TIM2,DISABLE);
 								open_door();
 								TIM_Cmd(TIM2,ENABLE);
 								WaitCardOff();

@@ -41,3 +41,4 @@
 .\obj\main.o: ..\..\BSP\inc\rfid.h
 .\obj\main.o: ..\..\Project\main.h
 .\obj\main.o: ..\..\BSP\inc\rc522.h
+.\obj\main.o: ..\..\BSP\inc\as608.h

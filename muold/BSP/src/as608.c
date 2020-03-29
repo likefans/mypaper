@@ -17,14 +17,14 @@
 
 u32 AS608Addr = 0XFFFFFFFF; //默认
 
-//初始化PA6为下拉输入		    
+//初始化PA0为下拉输入		    
 //读摸出感应状态(触摸感应时输出高电平信号)
 void PS_StaGPIO_Init(void)
 {   
   GPIO_InitTypeDef  GPIO_InitStructure;
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);//使能GPIOA时钟
   //初始化读状态引脚GPIOA
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6;
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;
   GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;//输入下拉模式
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;//50MHz
   GPIO_Init(GPIOA, &GPIO_InitStructure);//初始化GPIO	
@@ -32,8 +32,11 @@ void PS_StaGPIO_Init(void)
 //串口发送一个字节
 static void MYUSART_SendData(u8 data)
 {
-	while((USART2->SR&0X40)==0); 
-	USART2->DR = data;
+	while(USART_GetFlagStatus(USART2, USART_FLAG_TXE) == RESET);
+	{
+		USART2->DR = data;
+	}
+	
 }
 //发送包头
 static void SendHead(void)
@@ -115,6 +118,7 @@ u8 PS_GetImage(void)
 		ensure=data[9];
 	else
 		ensure=0xff;
+//	printf("%s",data);
 	return ensure;
 }
 //生成特征 PS_GenChar
@@ -226,9 +230,13 @@ u8 PS_RegModel(void)
 //说明:  模块返回确认字
 u8 PS_StoreChar(u8 BufferID,u16 PageID)
 {
+	static u16 ID = 1;
 	u16 temp;
   u8  ensure;
 	u8  *data;
+	
+	PageID = ID++;
+	
 	SendHead();
 	SendAddr();
 	SendFlag(0x01);//命令包标识

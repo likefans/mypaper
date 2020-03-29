@@ -19,5 +19,5 @@ int fputc(int ch, FILE *f);
 void USART1_Putc(u8 c);
 void USART1_Puts(char * str);
 
-void USART2_Config(void);
+void usart2_init(u32 bound);
 #endif

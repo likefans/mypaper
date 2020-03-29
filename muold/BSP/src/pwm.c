@@ -6,8 +6,8 @@ void TIM4_IRQHandler(void)
 	if(TIM_GetFlagStatus(TIM4,TIM_IT_Update) != RESET)
 	{
 		USART2_RX_STA|=1<<15;	//标记接收完成
-		printf("heh");
-		TIM_ClearITPendingBit(TIM4, TIM_IT_Update  );  //清除TIM4更新中断标志    
+		TIM_ClearITPendingBit(TIM4, TIM_IT_Update );  //清除TIM4更新中断标志    
+		TIM_Cmd(TIM4,DISABLE);
 	}
 	
 }
